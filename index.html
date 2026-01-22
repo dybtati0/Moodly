@@ -1,76 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>Moodly - مزاجك النهارده</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-
-<header>
-  <h1>Moodly</h1>
-  <label class="dark-switch">
-    <input type="checkbox" id="toggle-dark">
-    <span class="slider"></span>
-  </label>
-</header>
-
-<main class="container">
-
-  <div class="moods">
-    <button data-mood="happy">😄 سعيد</button>
-    <button data-mood="sad">😢 حزين</button>
-    <button data-mood="angry">😡 غاضب</button>
-    <button data-mood="calm">😌 هادئ</button>
-    <button data-mood="excited">🤩 متحمس</button>
-    <button data-mood="fearful">😨 خائف</button>
-    <button data-mood="stressed">😰 متوتر</button>
-    <button data-mood="bored">😴 ممل</button>
-    <button data-mood="frustrated">😞 محبط</button>
-    <button data-mood="grateful">🙏 ممتن</button>
-    <button data-mood="loving">❤️ محب</button>
-    <button data-mood="relaxed">🛀 مسترخي</button>
-    <button data-mood="curious">🤔 فضولي</button>
-    <button data-mood="inspired">✨ ملهم</button>
-    <button data-mood="lonely">😔 وحيد</button>
-    <button data-mood="creative">🎨 مبدع</button>
-    <button data-mood="optimistic">🌈 متفائل</button>
-    <button data-mood="pessimistic">🌫️ متشائم</button>
-    <button data-mood="indecisive">🤷 متردد</button>
-    <button data-mood="busy">⏳ مشغول</button>
-    <button data-mood="fun">😎 ممتع</button>
-    <button data-mood="affectionate">🤗 حنون</button>
-    <button data-mood="meditative">🧘 متأمل</button>
-    <button data-mood="adventurous">🏕️ مغامر</button>
-  </div>
-
-  <div id="mood-card" class="card hidden">
-    <h2 id="mood-title"></h2>
-    <p id="quote"></p>
-    <small id="counter"></small>
-
-    <div class="actions">
-      <button id="new-quote">🔄 اقتباس جديد</button>
-      <button id="copy-quote">📋 نسخ</button>
-    </div>
-
-    <div class="share-buttons">
-      <button id="share-whatsapp">واتساب</button>
-      <button id="share-facebook">فيسبوك</button>
-      <button id="share-instagram">إنستجرام</button>
-    </div>
-
-    <button id="reset" class="reset-btn">تغيير المزاج</button>
-  </div>
-
-  <a href="about.html" class="about-link">عن الموقع</a>
-  <p>© 2026 Moodly. كل الحقوق محفوظة.</p>
-</main>
-
-<div id="toast"></div>
-
-<script src="js/main.js"></script>
-<script src="js/app.js"></script>
-</body>
-</html>
