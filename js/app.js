@@ -2275,9 +2275,13 @@ document.getElementById("share-whatsapp").onclick=()=>{
 document.getElementById("share-twitter").onclick = () => {
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(document.getElementById("quote").textContent)}`);
 };
-document.getElementById("share-facebook").onclick = () => {
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(document.getElementById("quote").textContent)}`);
-};
+function shareFacebook() {
+  const url = encodeURIComponent(window.location.href);
+  window.open(
+    `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+    "_blank"
+  );
+}
 document.getElementById("share-telegram").onclick = () => {
   const text = encodeURIComponent(document.getElementById("quote").textContent);
   const url = `https://t.me/share/url?url=&text=${text}`; // نضيف url فاضي أو رابط موقعك
