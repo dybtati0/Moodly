@@ -1,0 +1,153 @@
+*{box-sizing:border-box;font-family:"Segoe UI",sans-serif;}
+body{margin:0;background:#f3f4f6;color:#111;transition:.3s;}
+body.dark{background:#111827;color:#eee;}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;}
+.container{max-width:500px;margin:auto;padding:15px;text-align:center;}
+.moods{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.moods button{border:none;border-radius:14px;padding:14px;font-weight:bold;cursor:pointer;transition:.25s;}
+.moods button:hover{transform:translateY(-3px);}
+.moods button:active{transform:scale(0.96);}
+.moods button{background:linear-gradient(135deg,#e5e7eb,#d1d5db);}
+body.dark .moods button{background:linear-gradient(135deg,#2a2a2a,#3a3a3a);color:#fff;}
+
+.card{margin-top:20px;padding:20px;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.15);animation:fade .4s ease;}
+@keyframes fade{from{opacity:0;transform:scale(0.95);} to{opacity:1;transform:scale(1);}}
+.hidden{display:none;}
+
+/* ===== Mood Colors ===== */
+.card.happy{background:#ecfdf5;}
+.card.sad{background:#eff6ff;}
+.card.angry{background:#fee2e2;}
+.card.calm{background:#f5f3ff;}
+.card.excited{background:#f3e8ff;}
+.card.fearful{background:#f0f9ff;}
+.card.stressed{background:#fef3f3;}
+.card.bored{background:#f3f4f6;}
+.card.frustrated{background:#fef2f2;}
+.card.grateful{background:#d1fae5;}
+.card.loving{background:#fee2e5;}
+.card.relaxed{background:#e0f2fe;}
+.card.curious{background:#fefce8;}
+.card.inspired{background:#fdf4ff;}
+.card.lonely{background:#fefafa;}
+.card.creative{background:#fffbeb;}
+.card.optimistic{background:#f0fdf4;}
+.card.pessimistic{background:#f5f3f4;}
+.card.indecisive{background:#e0e7ff;}
+.card.busy{background:#fef3c7;}
+.card.fun{background:#ede9fe;}
+.card.affectionate{background:#fff1f2;}
+.card.meditative{background:#e0f7fa;}
+.card.adventurous{background:#fff7e0;}
+
+/* Dark Mode Colors */
+body.dark .card.happy{background:#064e3b;}
+body.dark .card.sad{background:#1e3a8a;}
+body.dark .card.angry{background:#991b1b;}
+body.dark .card.calm{background:#312e81;}
+body.dark .card.excited{background:#6b21a8;}
+body.dark .card.fearful{background:#1e40af;}
+body.dark .card.stressed{background:#7f1d1d;}
+body.dark .card.bored{background:#374151;}
+body.dark .card.frustrated{background:#991b1b;}
+body.dark .card.grateful{background:#064e3b;}
+body.dark .card.loving{background:#831843;}
+body.dark .card.relaxed{background:#0369a1;}
+body.dark .card.curious{background:#713f12;}
+body.dark .card.inspired{background:#581c87;}
+body.dark .card.lonely{background:#4b5563;}
+body.dark .card.creative{background:#78350f;}
+body.dark .card.optimistic{background:#065f46;}
+body.dark .card.pessimistic{background:#1e293b;}
+body.dark .card.indecisive{background:#4338ca;}
+body.dark .card.busy{background:#78350f;}
+body.dark .card.fun{background:#4c1d95;}
+body.dark .card.affectionate{background:#831843;}
+body.dark .card.meditative{background:#065f73;}
+body.dark .card.adventurous{background:#78350f;}
+
+.actions,.share-buttons{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px;}
+.actions button{background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;}
+#share-whatsapp{background:#25d366;color:white;}
+#share-facebook{background:#1877f2;color:white;}
+#share-instagram{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);color:white;}
+.reset-btn{margin-top:15px;background:#0ea5e9;color:white;}
+
+.dark-switch{width:46px;height:24px;position:relative;}
+.dark-switch input{display:none;}
+.slider{background:#d1d5db;border-radius:999px;position:absolute;inset:0;transition:.3s;}
+.slider::before{content:"🌙";width:18px;height:18px;background:white;position:absolute;top:3px;left:3px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s;}
+input:checked + .slider{background:#6366f1;}
+input:checked + .slider::before{transform:translateX(22px);content:"☀️";}
+
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#111;color:white;padding:10px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:.3s;}
+#toast.show{opacity:1;}
+.about-link{display:block;margin-top:20px;font-weight:bold;text-decoration:none;}
+/* ==== أزرار المزاج ==== */
+.moods button {
+  border: none;
+  border-radius: 20px;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg,#e0e7ff,#c7d2fe);
+  color: #111;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.moods button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.moods button:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+body.dark .moods button {
+  background: linear-gradient(135deg,#374151,#1f2937);
+  color: #fff;
+}
+
+/* ==== أزرار الإجراءات ==== */
+.actions button, .reset-btn, .share-buttons button {
+  border: none;
+  border-radius: 18px;
+  padding: 12px 18px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.actions button:hover, .reset-btn:hover, .share-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.actions button:active, .reset-btn:active, .share-buttons button:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ألوان خاصة لكل زر */
+#new-quote { background: linear-gradient(135deg,#6366f1,#4f46e5); }
+#copy-quote { background: linear-gradient(135deg,#9333ea,#7e22ce); }
+#reset { background: linear-gradient(135deg,#0ea5e9,#0284c7); }
+
+#share-whatsapp { background: #25d366; }
+#share-facebook { background: #1877f2; }
+#share-instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); }
+
+/* Dark Mode تعديل الألوان */
+body.dark #new-quote { background: linear-gradient(135deg,#4f46e5,#4338ca); }
+body.dark #copy-quote { background: linear-gradient(135deg,#7e22ce,#5b21b6); }
+body.dark #reset { background: linear-gradient(135deg,#0284c7,#0369a1); }
+body.dark #share-whatsapp { background: #1e7e34; }
+body.dark #share-facebook { background: #145dbf; }
+body.dark #share-instagram { background: linear-gradient(135deg,#dd2a7b,#8134af,#f58529); }
